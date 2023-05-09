@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --total-score-section-mobile-height: 46%;
+    --border-radius: 12px;
+    --border-before-after-radius: 3px;
+    --border-before-after-style: solid;
+}
+
+html {
+    height: 100%;
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    /* Weights 500, 700, 800 */
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+/* First part */
+/**************************/
+
+.total-score-section {
+    padding: 4.5% 8%;
+    height: var(--total-score-section-mobile-height);
+    width: 100%;
+    background-image: linear-gradient(180deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    border-radius:  0 0 2.1rem 2.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.total-score-section h3 {
+    color: hsl(241, 100%, 89%);
+    margin-bottom: 10px;
+}
+
+.score-circle-div {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.score-circle-div h1 {
+    font-size: 3rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.score-circle-div pre {
+    font-size: 0.8rem;
+    color: hsla(221, 100%, 96%, 0.4);
+    font-weight: 700;
+}
+
+.score-circle-div + h1 {
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 8px;
+}
+
+.total-score-section p {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: hsla(241, 100%, 89%, 0.7);
+    width: 80%;
+}
+
+/**************************/
+
+
+/* Second Part */
+/**************************/
+
+.summary-section {
+    background-color: hsl(0, 0%, 100%);
+    height: calc(100% - var(--total-score-section-mobile-height));
+    width: 100%;
+    padding: 5% 9%;
+}
+
+.summary-section h4 {
+    color: hsl(224, 30%, 27%);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.result-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 72%;
+    margin-bottom: 12px;
+}
+
+.result-div > div {
+    width: 100%;
+    height: 20%;
+}
+
+.outer,
+.inner{
+    position: relative;
+    border-radius: var(--border-radius);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.outer::before,
+.outer::after,
+.inner::before,
+.inner::after {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: var(--border-radius);
+}
+
+.outer div {
+    width: inherit;
+    height: 100%;
+}
+
+.outer::before {
+    top: 0;
+    left: 0;
+    border-top: var(--border-before-after-radius) var(--border-before-after-style);
+    border-left:  var(--border-before-after-radius) var(--border-before-after-style);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.outer::after {
+    bottom: 0;
+    left: 0;
+    border-left: var(--border-before-after-radius) var(--border-before-after-style);
+    border-bottom: var(--border-before-after-radius) var(--border-before-after-style);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.inner::before {
+    top: 0;
+    right: 0;
+    border-top: var(--border-before-after-radius) var(--border-before-after-style);
+    border-right: var(--border-before-after-radius) var(--border-before-after-style);
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.inner::after {
+    bottom: 0;
+    right: 0;
+    border-right: var(--border-before-after-radius) var(--border-before-after-style);
+    border-bottom: var(--border-before-after-radius) var(--border-before-after-style);
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.outer-reaction-div::before,
+.outer-reaction-div::after,
+.inner-reaction-div::before,
+.inner-reaction-div::after {
+    border-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.outer-memory-div::before,
+.outer-memory-div::after,
+.inner-memory-div::before,
+.inner-memory-div::after {
+    border-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.outer-verbal-div::before,
+.outer-verbal-div::after,
+.inner-verbal-div::before,
+.inner-verbal-div::after {
+    border-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.outer-visual-div::before,
+.outer-visual-div::after,
+.inner-visual-div::before,
+.inner-visual-div::after {
+    border-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.inner-reaction-div {
+    background: hsla(0, 100%, 67%, 0.062);
+}
+
+.inner-memory-div {
+    background: hsla(39, 100%, 56%, 0.062);
+}
+
+.inner-verbal-div {
+    background: hsla(166, 100%, 37%, 0.062);
+}
+
+.inner-visual-div {
+    background: hsla(234, 85%, 45%, 0.062);
+}
+
+img + p {
+    margin: 0 100px 0 14px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    width: 65px;
+}
+
+.inner-reaction-div img + p {
+    color: hsla(0, 100%, 67%, 0.8);
+}
+
+.inner-memory-div img + p {
+    color: hsla(39, 100%, 56%, 0.8);
+}
+
+.inner-verbal-div img + p {
+    color: hsla(166, 100%, 37%, 0.8);
+}
+
+.inner-visual-div img + p {
+    color: hsla(234, 85%, 45%, 0.8);
+}
+
+.inner .score {
+    font-size: 0.85rem;
+    color: hsl(224, 30%, 27%);
+    font-weight: 800;
+}
+
+.score span {
+    color: hsl(293, 4%, 59%);
+    margin: 0;
+}
+
+button {
+    position: relative;
+    color: hsl(0, 0%, 100%);
+    font-weight: 800;
+    font-size: 0.8rem;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: hsl(224, 30%, 27%);
+    cursor: pointer;
+    transition: all 2s ease-in-out 0s;
+    z-index: 1;
+}
+
+button::before {
+    content: '';
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(180deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    z-index: -1;
+    transition: opacity 0.7s ease-in-out 0s;
+    opacity: 0;
+}
+
+button:hover::before {
+    opacity: 1;
+}
